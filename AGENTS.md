@@ -3,8 +3,10 @@
 ## Naming
 
 - The layout is called **Coffee++** — not "Entikey"/"ENTI-Key++" (historical
-  name, only kept in old files/downloads like `Enti-key*.klc`,
-  `.xmodmap-ENTI-key++`, `download/entikey-1.0_i386.deb`).
+  name). All files were renamed to `Coffee++*`; the old names remain as
+  symlinks pointing to the new files so external links keep working —
+  do not replace the symlinks with real files, and keep the pattern when
+  renaming files in the future.
 - The XKB variant name installed by `dev/install-coffeeplusplus-xkb.sh` is
   `coffeeplusplus` (plain letters only — `+` is the layout+variant separator
   in `de+variant` strings and cannot be part of the name).

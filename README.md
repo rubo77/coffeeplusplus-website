@@ -249,7 +249,7 @@ xkb_symbols "coffeeplusplus" {
 
 ### 4. Debian package (historic)
 
-`download/entikey-1.0_i386.deb` (architecture-independent despite the name) appends
+`download/coffeeplusplus-1.0_i386.deb` (architecture-independent despite the name) appends
 the symbols block above and installs small switcher scripts into `/usr/local/bin/`:
 
 ```sh
@@ -257,7 +257,7 @@ entikey.bs    # setxkbmap -model pc105 -layout de -variant coffeeplusplus
 qwertz.bs     # setxkbmap -model pc105 -layout de -variant basic
 ```
 
-Install with `sudo dpkg -i download/entikey-1.0_i386.deb`.
+Install with `sudo dpkg -i download/coffeeplusplus-1.0_i386.deb`.
 The package dates from 2007 — prefer method 1 on current systems.
 
 ### Caps Lock as a second AltGr (without the full layout)
@@ -277,7 +277,7 @@ option in the compositor/desktop keyboard settings).
 
 - **Windows:** `Portable_Coffee++V21.zip` (Portable Keyboard Layout, thanks to
   Máté Farkas) — run `pkl.exe`, add to autostart for permanent use. The source
-  `.klc` files (`Enti-key++_v15.klc`, `Enti-key15.klc`) can be edited with the
+  `.klc` files (`Coffee++_v14.klc`, `Coffee++_v15.klc`) can be edited with the
   *MS Keyboard Layout Creator*. `CapsLock2AltGr_ScrollLock2CapsLock.ktw` and
   `CapsLock2BackspaceScrollLock2CapsLock.ktw` are KeyTweak files to remap
   Caps Lock to a second AltGr or to Backspace.
@@ -289,18 +289,22 @@ option in the compositor/desktop keyboard settings).
 
 | File / dir | Purpose |
 |---|---|
-| `.xmodmap-Coffee++` / `.xmodmap-ENTI-key++` | xmodmap maps (activate) |
+| `.xmodmap-Coffee++` | xmodmap map (activate) |
 | `.xmodmap-QWERT` | xmodmap map to switch back |
-| `Enti-key++_v15.klc`, `Enti-key15.klc` | MS Keyboard Layout Creator sources |
+| `Coffee++_v14.klc`, `Coffee++_v15.klc` | MS Keyboard Layout Creator sources |
 | `klc2xmodmap/` | PHP tool converting `.klc` files to xmodmap (generated the `.xmodmap-*` files) |
 | `dev/install-coffeeplusplus-xkb.sh` | installs the `coffeeplusplus` variant properly (symbols + evdev registry + upgrade-proof re-apply), see [Installation on Linux](#installation-on-linux) |
-| `download/entikey-1.0_i386.deb` | historic Debian package (XKB symbols + switcher scripts) |
+| `download/coffeeplusplus-1.0_i386.deb` | historic Debian package (XKB symbols + switcher scripts) |
 | `Anleitung-Linux-Kubuntu.doc` | original German Ubuntu/XKB install instructions (2007) |
 | `Linux beta9/README_Linux.txt` | original xmodmap install instructions |
 | `Coffee++_keyboard_layout.gif/.pdf/.xcf/.sla` | layout images (print + sources) |
-| `course.txt`, `lessons/`, `lesson.entikey.txt` | typing-tutor course material |
+| `course.txt`, `lessons/`, `lesson.coffeeplusplus.txt` | typing-tutor course material |
 | `v8.5_README.txt` / `v8.5_README_de.txt` | original beta readme (EN/DE) |
 | `beta_versions/` | older remapper versions |
+
+All files were renamed from their historical `ENTI-key++*`/`Enti-key*`/`entikey*`
+names to `Coffee++*`; the old names are kept as symlinks so external links
+still resolve.
 
 ## Learning to type
 
