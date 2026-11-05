@@ -24,7 +24,7 @@ function alert($text){
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-	<title>Downlead ENTIkey</title>
+	<title>Download Coffee++</title>
 	<link rel="STYLESHEET" type="text/css" href="../../style-v2.php">
 </head>
 

@@ -1,6 +1,6 @@
 <?
 if (!empty($_REQUEST["w"])) $w=stripslashes($_REQUEST["w"]);
-else $w=implode("",file("../Enti-key15.klc"));
+else $w=implode("",file("../Coffee++_v15.klc"));
 ?><html>
 <title>Linux xmodmap generator klc2xmodmap from MS Keyboard Layout Creator</title>
 <style type="text/css">
