@@ -294,6 +294,8 @@ option in the compositor/desktop keyboard settings).
 | `Coffee++_v14.klc`, `Coffee++_v15.klc` | MS Keyboard Layout Creator sources |
 | `klc2xmodmap/` | PHP tool converting `.klc` files to xmodmap (generated the `.xmodmap-*` files) |
 | `dev/install-coffeeplusplus-xkb.sh` | installs the `coffeeplusplus` variant properly (symbols + evdev registry + upgrade-proof re-apply), see [Installation on Linux](#installation-on-linux) |
+| `dev/deploy.sh` | rsyncs the site to the live docroot (`dev/.env`; `-n` = dry-run, never `--delete`) |
+| `dev/run.sh` | starts the local docker mirror (website+forum :8624, mariadb :3395) via `dev/docker-compose.yml` |
 | `download/coffeeplusplus-1.0_i386.deb` | historic Debian package (XKB symbols + switcher scripts) |
 | `Anleitung-Linux-Kubuntu.doc` | original German Ubuntu/XKB install instructions (2007) |
 | `Linux beta9/README_Linux.txt` | original xmodmap install instructions |

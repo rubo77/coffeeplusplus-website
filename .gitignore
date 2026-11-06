@@ -1,1 +1,4 @@
 dev/prompts_log.md
+dev/.env
+dev/playwright/node_modules/
+dev/playwright/test-results/

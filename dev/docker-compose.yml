@@ -1,0 +1,37 @@
+# Local Docker mirror of the coffeeplusplus website + phpBB3 forum.
+# Web: http://localhost:8624  — MariaDB: localhost:3395
+#
+# Start:  docker compose -f dev/docker-compose.yml --env-file dev/.env up -d --build
+# (docker compose also auto-loads dev/.env when invoked in this dir)
+#
+# Paths/credentials come from dev/.env (gitignored), see dev/.env.example.
+
+services:
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASS:?set in dev/.env}
+      MARIADB_DATABASE: ${DB_NAME:?set in dev/.env}
+      MARIADB_USER: ${DB_USER:?set in dev/.env}
+      MARIADB_PASSWORD: ${DB_PASS:?set in dev/.env}
+    ports:
+      - "3395:3306"
+    volumes:
+      - phpbb-db:/var/lib/mysql
+      # imported automatically on first boot (fresh volume only)
+      - ${FORUM_SQL_DUMP:?set in dev/.env}:/docker-entrypoint-initdb.d/${DB_NAME}.sql.gz:ro
+
+  web:
+    build: ./docker-php
+    restart: unless-stopped
+    ports:
+      - "8624:80"
+    volumes:
+      - ..:/var/www/html:ro
+      - ${FORUM_DIR:?set in dev/.env}:/var/www/html/phpBB3
+    depends_on:
+      - db
+
+volumes:
+  phpbb-db:

@@ -1,0 +1,129 @@
+From 24beb1055b80cfa9bbc8c426c36c9e6cf55837c9 Mon Sep 17 00:00:00 2001
+From: devin <devin@local>
+Date: Thu, 5 Nov 2026 23:05:58 +0100
+Subject: [PATCH] de: add Coffee++ one-hand programmer layout variant
+
+---
+ rules/base.extras.xml |  6 +++
+ symbols/de            | 91 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 97 insertions(+)
+
+diff --git a/rules/base.extras.xml b/rules/base.extras.xml
+index b6e8e51..436b9c8 100644
+--- a/rules/base.extras.xml
++++ b/rules/base.extras.xml
+@@ -165,6 +165,12 @@
+         </languageList>
+       </configItem>
+       <variantList>
++        <variant>
++          <configItem popularity="exotic">
++            <name>coffeeplusplus</name>
++            <description>German (Coffee++)</description>
++          </configItem>
++        </variant>
+         <variant>
+           <configItem popularity="exotic">
+             <name>hu</name>
+diff --git a/symbols/de b/symbols/de
+index 1411ab9..bcdc65c 100644
+--- a/symbols/de
++++ b/symbols/de
+@@ -1230,3 +1230,94 @@ xkb_symbols "noted" {
+     include "level5(lsgt_switch_lock)"
+     include "level5(ralt_switch_lock)"
+ };
++// <German COFFEE++>
++// adopted 2007 by Ruben Barkow <entikey@spacetrace.org>
++// inspired by Dvorak, de-ergo, Colemak and Neo
++
++// these lines must be added at the end of the file
++// /usr/share/X11/xkb/symbols/de
++
++partial alphanumeric_keys modifier_keys
++xkb_symbols "coffeeplusplus" {
++
++    include "de"
++    name[Group1]= "German (Coffee++)";
++
++    key <TLDE> { [      q, Q,                   7, asciicircum                  ] };
++    key <AE01> { [      p, P,                   8, exclam                       ] };
++    key <AE02> { [      f, F,                   9, quotedbl                     ] };
++    key <AE03> { [      m, M,                   0, backslash                    ] };
++    key <AE04> { [      u, U,                   1, percent                      ] };
++    key <AE05> { [      k, K,                   2, onehalf                      ] };
++    key <AE06> { [      y, Y,                   3, threesuperior                ] };
++    key <AE07> { [      dollar, asciitilde,     4, onequarter                   ] };
++    key <AE08> { [      slash, EuroSign,        EuroSign, onethird              ] };
++    key <AE09> { [      plus, ampersand,        plusminus, dead_caron           ] };
++    key <AE10> { [      asterisk, section,      currency, multiply              ] };
++    key <AE11> { [      dead_diaeresis, ssharp, sterling, guillemotleft         ] };
++    key <AE12> { [      exclam, exclamdown,     dead_acute, guillemotright      ] };
++
++    key <AD01> { [      w, W,                   at, apostrophe                  ] };
++    key <AD02> { [      i, I,                   bracketleft, plus               ] };
++    key <AD03> { [      r, R,                   bracketright, asterisk          ] };
++    key <AD04> { [      h, H,                   parenleft, numbersign           ] };
++    key <AD05> { [      l, L,                   parenright, EuroSign            ] };
++    key <AD06> { [      z, Z,                   5, twothirds                    ] };
++    key <AD07> { [      parenleft, braceleft,   dead_cedilla, cent              ] };
++    key <AD08> { [      parenright, braceright, Up, R                           ] };
++    key <AD09> { [      equal, percent,         Prior, percent                  ] };
++    key <AD10> { [      bracketleft, bar,       Delete, brokenbar               ] };
++    key <AD11> { [      greater, dead_grave,    copyright, U203A                ] };
++    key <AD12> { [      less, dead_circumflex,  dead_tilde, U2039               ] };
++
++    key <AC01> { [      a, A,                   question, ssharp                ] };
++    key <AC02> { [      s, S,                   period, ampersand               ] };
++    key <AC03> { [      d, D,                   Return, colon                   ] };
++    key <AC04> { [      o, O,                   BackSpace, dead_diaeresis       ] };
++    key <AC05> { [      c, C,                   semicolon, dead_acute           ] };
++    key <AC06> { [      g, G,                   6, trademark                    ] };
++    key <AC07> { [      e, E,                   Left, ae                        ] };
++    key <AC08> { [      n, N,                   Down,   registered              ] };
++    key <AC09> { [      t, T,                   Right,  rightarrow              ] };
++    key <AC10> { [      i, I,                   oslash, Oslash                  ] };
++    key <AC11> { [      bracketright, question, questiondown, U21D2             ] };
++    key <BKSL> { [      apostrophe, numbersign, dead_abovering,  dead_grave     ] };
++
++    key <LSGT> { [      x, X,                   bar, comma                      ] };
++    key <AB01> { [      v, V,                   greater, less                   ] };
++    key <AB02> { [      t, T,                   equal, dead_acute               ] };
++    key <AB03> { [      n, N,                   underscore, dead_tilde          ] };
++    key <AB04> { [      e, E,                   minus, twosuperior              ] };
++    key <AB05> { [      b, B,                   braceleft, infinity             ] };
++    key <AB06> { [      j, J,                   braceright, yen                 ] };
++    key <AB07> { [      quotedbl, backslash,    Home, mu                        ] };
++    key <AB08> { [      comma,  semicolon,      End, minus                      ] };
++    key <AB09> { [      period, colon,          Next, periodcentered            ] };
++    key <AB10> { [      minus, underscore,      minus, underscore               ] };
++
++    key <SPCE> { [    space,   space, nobreakspace, nobreakspace ] };
++
++    key  <KP7> {   [  KP_Home,   KP_7, seveneighths, oneeighth   ]   };
++    key  <KP8> {   [  KP_Up,   KP_8, uparrow, fiveeighths   ]   };
++    key  <KP9> {   [  KP_Prior,   KP_9, threeeighths, threeeighths ]   };
++    key  <KP4> {   [  KP_Left,   KP_4, leftarrow, onequarter      ]   };
++    key  <KP5> {   [  KP_Begin,   KP_5, dagger, onehalf          ]   };
++    key  <KP6> {   [  KP_Right,   KP_6, rightarrow, threequarters   ]   };
++    key  <KP1> {   [  KP_End,   KP_1, onesuperior, onesuperior      ]   };
++    key  <KP2> {   [  KP_Down,   KP_2, downarrow, twosuperior      ]   };
++    key  <KP3> {   [  KP_Next,   KP_3, threesuperior, threesuperior   ]   };
++    key <KPEN> {   [     KP_Enter   ]   };
++    key <KPEQ> {   [     KP_Equal   ]   };
++    key  <KP0> {   [  KP_Insert,   KP_0, percent, degree         ]   };
++    key <KPDL> {     [  KP_Delete,   KP_Decimal, periodcentered, comma  ]   };
++    // End "Keypad" section
++
++    include "level3(ralt_switch)"
++
++    // Modifier section
++    key <CAPS> { [ ISO_Level3_Shift, ISO_Level3_Shift,  Caps_Lock ] };
++
++    key  <TAB> { [ Tab, ISO_Left_Tab, KP_Delete, slash ] };
++
++};
++// </German COFFEE++>
+-- 
+2.43.0
+
